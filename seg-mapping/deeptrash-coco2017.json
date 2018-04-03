@@ -1,0 +1,165 @@
+[
+    {
+        "from_id": 1,
+        "to_id": 1,
+        "name": "person",
+        "supercategory": "person"
+    },
+    {
+        "from_id": 44,
+        "to_id": 3,
+        "name": "bottle",
+        "supercategory": "kitchen"
+    },
+    {
+        "from_id": 47,
+        "to_id": 3,
+        "name": "cup",
+        "supercategory": "kitchen"
+    },
+    {
+        "from_id": 48,
+        "to_id": 5,
+        "name": "fork",
+        "supercategory": "kitchen"
+    },
+    {
+        "from_id": 49,
+        "to_id": 5,
+        "name": "knife",
+        "supercategory": "kitchen"
+    },
+    {
+        "from_id": 50,
+        "to_id": 5,
+        "name": "spoon",
+        "supercategory": "kitchen"
+    },
+    {
+        "from_id": 51,
+        "to_id": 4,
+        "name": "bowl",
+        "supercategory": "kitchen"
+    },
+    {
+        "from_id": 52,
+        "to_id": 4,
+        "name": "banana",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 53,
+        "to_id": 4,
+        "name": "apple",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 54,
+        "to_id": 4,
+        "name": "sandwich",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 55,
+        "to_id": 4,
+        "name": "orange",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 56,
+        "to_id": 4,
+        "name": "broccoli",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 57,
+        "to_id": 4,
+        "name": "carrot",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 58,
+        "to_id": 4,
+        "name": "hot dog",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 59,
+        "to_id": 4,
+        "name": "pizza",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 60,
+        "to_id": 4,
+        "name": "donut",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 61,
+        "to_id": 4,
+        "name": "cake",
+        "supercategory": "food"
+    },
+    {
+        "from_id": 100,
+        "to_id": 3,
+        "name": "cardboard",
+        "supercategory": "raw-material"
+    },
+    {
+        "from_id": 121,
+        "to_id": 4,
+        "name": "food-other",
+        "supercategory": "food-stuff"
+    },
+    {
+        "from_id": 122,
+        "to_id": 4,
+        "name": "fruit",
+        "supercategory": "food-stuff"
+    },
+    {
+        "from_id": 129,
+        "to_id": 4,
+        "name": "leaves",
+        "supercategory": "plant"
+    },
+    {
+        "from_id": 132,
+        "to_id": 3,
+        "name": "metal",
+        "supercategory": "raw-material"
+    },
+    {
+        "from_id": 137,
+        "to_id": 5,
+        "name": "napkin",
+        "supercategory": "textile"
+    },
+    {
+        "from_id": 139,
+        "to_id": 3,
+        "name": "paper",
+        "supercategory": "raw-material"
+    },
+    {
+        "from_id": 143,
+        "to_id": 3,
+        "name": "plastic",
+        "supercategory": "raw-material"
+    },
+    {
+        "from_id": 153,
+        "to_id": 4,
+        "name": "salad",
+        "supercategory": "food-stuff"
+    },
+    {
+        "from_id": 170,
+        "to_id": 4,
+        "name": "vegetable",
+        "supercategory": "food-stuff"
+    }
+]
+
