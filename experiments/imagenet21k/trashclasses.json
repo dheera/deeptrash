@@ -1,0 +1,23 @@
+{
+  "recycle": [
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/instrumentality.n.03/toiletry.n.01",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/covering.n.02/top.n.09/screwtop.n.01",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/instrumentality.n.03/container.n.01/vessel.n.03/bottle.n.01",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/instrumentality.n.03/container.n.01/can.n.01",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/instrumentality.n.03/container.n.01/box.n.01",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/instrumentality.n.03/container.n.01/cup.n.01",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/instrumentality.n.03/medium.n.01/print_media.n.01"
+  ],
+  "trash": [
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/commodity.n.01/drygoods.n.01/white_goods.n.02/linen.n.03",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/fabric.n.01",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/artifact.n.01/article.n.02/ware.n.01/tableware.n.01"
+  ],
+  "compost": [
+    "entity.n.01/physical_entity.n.01/matter.n.03/substance.n.07/food.n.01"
+  ],
+  "person": [
+    "entity.n.01/physical_entity.n.01/causal_agent.n.01/person.n.01",
+    "entity.n.01/physical_entity.n.01/object.n.01/whole.n.02/living_thing.n.01/organism.n.01/person.n.01"
+  ]
+}

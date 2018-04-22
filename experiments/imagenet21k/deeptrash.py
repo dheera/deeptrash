@@ -6,6 +6,7 @@ import time
 import numpy as np
 import cv2
 from collections import namedtuple
+from nltk.corpus import wordnet
 
 prefix = 'Inception'
 epoch = 9
@@ -42,6 +43,19 @@ def predict(img):
     a = np.argsort(prob)[::-1]
     for i in a[0:5]:
         print('probability=%f, class=%s' %(prob[i], labels[i]))
+        offset = int(labels[i].split(' ')[0].strip('n'))
+        synset = wordnet._synset_from_pos_and_offset('n', offset)
+        paths = synset.hypernym_paths()
+        paths = list(map(
+          lambda x: '/'.join(
+            map(
+              lambda y: y.name(),
+              x
+            )
+          ),
+          paths
+        ))
+        print(paths)
 
 if __name__=="__main__":
     sym, arg_params, aux_params = mx.model.load_checkpoint(prefix, epoch)
@@ -57,7 +71,6 @@ if __name__=="__main__":
 
     while True:
         ret, img = cap.read()
-        print(img.shape)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (224, 224), interpolation = cv2.INTER_NEAREST) #.astype(np.float) / 128 - 1
 
