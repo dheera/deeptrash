@@ -5,7 +5,6 @@ import mxnet as mx
 import time
 import numpy as np
 import cv2
-import json
 from collections import namedtuple
 from nltk.corpus import wordnet
 
@@ -15,6 +14,23 @@ Batch = namedtuple('Batch', ['data'])
 
 cap = cv2.VideoCapture(0)
 
+def get_image(url, show=False):
+    # download and show the image
+    fname = mx.test_utils.download(url)
+    img = cv2.cvtColor(cv2.imread(fname), cv2.COLOR_BGR2RGB)
+    if img is None:
+         return None
+    if show:
+         plt.imshow(img)
+         plt.axis('off')
+    # convert into format (batch, RGB, width, height)
+    img = cv2.resize(img, (224, 224))
+    img = np.swapaxes(img, 0, 2)
+    img = np.swapaxes(img, 1, 2)
+    img = img[np.newaxis, :]
+    return img
+
+
 def predict(img):
     img = np.swapaxes(img, 0, 2)
     img = np.swapaxes(img, 1, 2)
@@ -23,22 +39,23 @@ def predict(img):
     mod.forward(Batch([mx.nd.array(img)]))
     prob = mod.get_outputs()[0].asnumpy()
     # print the top-5
-
     prob = np.squeeze(prob)
-    for ignore_index in trash_indexes['_ignore']:
-         prob[ignore_index] = 0.0
-
     a = np.argsort(prob)[::-1]
-
-    trash_category_probs = [ 0.0 ] * len(trash_categories)
-
     for i in a[0:5]:
-        if trash_revindex[i] != -1:
-            trash_category_probs[trash_revindex[i]] += prob[i]
-
-    for i, category in enumerate(trash_categories):
-        print(category, trash_category_probs[i])
-         
+        print('index=%d, probability=%f, class=%s' %(i, prob[i], labels[i]))
+        offset = int(labels[i].split(' ')[0].strip('n'))
+        synset = wordnet._synset_from_pos_and_offset('n', offset)
+        paths = synset.hypernym_paths()
+        paths = list(map(
+          lambda x: '/'.join(
+            map(
+              lambda y: y.name(),
+              x
+            )
+          ),
+          paths
+        ))
+        #print(paths)
 
 if __name__=="__main__":
     sym, arg_params, aux_params = mx.model.load_checkpoint(prefix, epoch)
@@ -49,20 +66,13 @@ if __name__=="__main__":
              label_shapes = mod._label_shapes)
     mod.set_params(arg_params, aux_params, allow_missing=True)
 
-    trash_revindex = [ -1 ] * 32768
-
-    with open('trash_indexes.json', 'r') as f:
-      trash_indexes = json.loads(f.read())
-
-    trash_categories = list(trash_indexes.keys())
-    for i in range(len(trash_categories)):
-         for index in trash_indexes[trash_categories[i]]:
-              trash_revindex[index] = i
+    with open('Inception-labels.txt', 'r') as f:
+      labels = [l.rstrip() for l in f]
 
     while True:
         ret, img = cap.read()
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        img = cv2.resize(img, (224, 224)) #, interpolation = cv2.INTER_NEAREST) #.astype(np.float) / 128 - 1
+        img = cv2.resize(img, (224, 224), interpolation = cv2.INTER_NEAREST) #.astype(np.float) / 128 - 1
 
         t = time.time()
         predict(img)

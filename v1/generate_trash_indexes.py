@@ -2,6 +2,12 @@
 import json
 from nltk.corpus import wordnet
 
+def get_hyponyms(synset):
+    hyponyms = set()
+    for hyponym in synset.hyponyms():
+        hyponyms |= set(get_hyponyms(hyponym))
+    return hyponyms | set(synset.hyponyms())
+
 with open('trash_mapping.json', 'r') as f:
     mapping = json.loads(f.read())
 
@@ -16,7 +22,7 @@ for trash_category in mapping:
     for synset_name in mapping[trash_category]:
         s = wordnet.synset(synset_name)
         synsets.add(s.offset())
-        for hyponym in s.hyponyms():
+        for hyponym in get_hyponyms(s):
              synsets.add(hyponym.offset())
     indexes = []
     for synset in synsets:

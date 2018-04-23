@@ -1,4 +1,9 @@
 {
+  "_ignore": [
+    "lighting.n.02",
+    "structure.n.01",
+    "source_of_illumination.n.01"
+  ],
   "recycle": [
     "toiletry.n.01",
     "lid.n.02",
@@ -27,8 +32,14 @@
     "manila.n.01",
     "newspaper.n.04",
     "pad.n.01",
+    "notebook.n.02",
+    "book.n.01",
+    "folder.n.02",
     "sheet.n.02",
+    "triangle.n.01",
+    "protective_covering.n.01",
     "wrapping_paper.n.01",
+    "beverage.n.01",
     "writing_paper.n.01"
   ],
   "trash": [
@@ -36,7 +47,11 @@
     "carbon_paper.n.01",
     "linen.n.03",
     "fabric.n.01",
+    "bag.n.01",
+    "bag.n.04",
+    "clothing.n.01",
     "tableware.n.01",
+    "device.n.01",
     "bowl.n.01"
   ],
   "compost": [
@@ -49,6 +64,8 @@
     "waste_paper.n.01"
   ],
   "person": [
-    "person.n.01"
+    "person.n.01",
+    "body_part.n.01",
+    "finger.n.03"
   ]
 }
