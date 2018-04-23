@@ -1,0 +1,54 @@
+{
+  "recycle": [
+    "toiletry.n.01",
+    "lid.n.02",
+    "cap.n.02",
+    "screwtop.n.01",
+    "bottle.n.01",
+    "can.n.01",
+    "bin.n.01",
+    "box.n.01",
+    "case.n.05",
+    "cassette.n.01",
+    "cylinder.n.04",
+    "envelope.n.01",
+    "glass.n.02",
+    "mailer.n.04",
+    "shaker.n.03",
+    "cup.n.01",
+    "print_media.n.01",
+    "art_paper.n.01",
+    "blotting_paper.n.01",
+    "blueprint_paper.n.01",
+    "cardboard.n.01",
+    "computer_paper.n.01",
+    "construction_paper.n.01",
+    "drawing_paper.n.01",
+    "manila.n.01",
+    "newspaper.n.04",
+    "pad.n.01",
+    "sheet.n.02",
+    "wrapping_paper.n.01",
+    "writing_paper.n.01"
+  ],
+  "trash": [
+    "filter_paper.n.01",
+    "carbon_paper.n.01",
+    "linen.n.03",
+    "fabric.n.01",
+    "tableware.n.01",
+    "bowl.n.01"
+  ],
+  "compost": [
+    "food.n.01",
+    "vegetable.n.01",
+    "vegetable.n.02",
+    "fruit.n.01",
+    "leaf.n.01",
+    "tissue.n.02",
+    "waste_paper.n.01"
+  ],
+  "person": [
+    "person.n.01"
+  ]
+}
